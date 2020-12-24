@@ -1,4 +1,4 @@
-package com.springboot.microservice.firstproject.bye.example.currencyconversion;
+package com.springboot.microservice.first.project.bye.a.example.currencyconversion;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
