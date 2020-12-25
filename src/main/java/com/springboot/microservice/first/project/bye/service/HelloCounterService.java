@@ -1,27 +1,27 @@
 package com.springboot.microservice.first.project.bye.service;
 
-import com.springboot.microservice.first.project.bye.dao.CounterDao;
+import com.springboot.microservice.first.project.bye.counter.CounterType;
+import com.springboot.microservice.first.project.bye.dao.ForeignCounterDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
+
 @Service
 public class HelloCounterService {
 
+    private CounterType type = CounterType.hello;
+
     @Autowired
-    @Qualifier(value = "helloCounterDaoInMemoryImpl")
-    private CounterDao counterDao;
+    @Qualifier(value = "foreignCounterDaoImpl")
+    private ForeignCounterDao foreignCounterDao;
 
-    public long incrementCounter() {
-        counterDao.setCounter( counterDao.getCounter() + 1L );
-        return counterDao.getCounter();
-    }
-
-    public long getCounter() {
-        return counterDao.getCounter();
+    public BigInteger getCounter() {
+        return foreignCounterDao.getForeignCounter(type);
     }
 
     public void setCounter(long counter) {
-        counterDao.setCounter(counter);
+        foreignCounterDao.setForeignCounter(type, counter);
     }
 }
