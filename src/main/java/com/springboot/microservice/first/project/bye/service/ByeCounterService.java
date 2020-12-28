@@ -13,7 +13,7 @@ public class ByeCounterService {
     private CounterDao counterDao;
 
     public long incrementCounter() {
-        counterDao.setCounter( counterDao.getCounter() + 1L );
+        counterDao.incrementCounter();
         return counterDao.getCounter();
     }
 

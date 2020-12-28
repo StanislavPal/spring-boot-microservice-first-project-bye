@@ -13,8 +13,8 @@ public class ByeCounterDaoInMemoryImpl implements CounterDao {
     }
 
     @Override
-    public void setCounter(long counter) {
-        this.counter = counter;
+    public void incrementCounter() {
+        this.counter++;
     }
 
 }
