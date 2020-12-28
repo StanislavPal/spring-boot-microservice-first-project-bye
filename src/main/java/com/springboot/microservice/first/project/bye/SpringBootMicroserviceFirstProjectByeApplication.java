@@ -15,15 +15,6 @@ import org.springframework.kafka.annotation.KafkaListener;
 @SpringBootApplication
 public class SpringBootMicroserviceFirstProjectByeApplication {
 
-    @Autowired
-    HelloCounterService helloCounterService;
-
-    @KafkaListener(topics="hello")
-    public void msgListener(String counter){
-        helloCounterService.setCounter( Long.parseLong(counter) );
-        System.out.println("======" + counter);
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(SpringBootMicroserviceFirstProjectByeApplication.class, args);
     }
