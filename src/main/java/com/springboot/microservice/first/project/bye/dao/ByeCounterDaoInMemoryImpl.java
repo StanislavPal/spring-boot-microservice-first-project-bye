@@ -3,7 +3,7 @@ package com.springboot.microservice.first.project.bye.dao;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ByeCounterDaoInMemoryImpl implements CounterDao {
+public class ByeCounterDaoInMemoryImpl implements ByeCounterDao {
 
     private long counter;
 

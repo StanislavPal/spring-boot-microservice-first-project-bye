@@ -20,7 +20,7 @@ public class ByeController {
     @GetMapping()
     public String sayBye() {
         byeCounterService.incrementCounter();
-        System.out.println("Количество прощаний! " + byeCounterService.getCounter());
+        System.out.println("==== Количество прощаний! " + byeCounterService.getCounter());
         return "Всего дорброго! Вы здоровались " + helloCounterService.getCounter() + " раз(а)!";
     }
 }
