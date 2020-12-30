@@ -24,8 +24,6 @@ public class HelloController {
     @RequestMapping()
     public ResponseEntity<CounterDto> getHelloCount() {
 
-//        long counter = helloCounterService.getCounter();
-
         ResponseEntity<CounterDto> response = new RestTemplate().getForEntity(
                 "http://localhost:8000/hello/count", CounterDto.class);
 
@@ -39,11 +37,6 @@ public class HelloController {
 
     @RequestMapping("feign")
     public ResponseEntity<CounterDto> getHelloCountFeign() {
-
-//        long counter = helloCounterService.getCounter();
-
-//        ResponseEntity<CounterDto> response = new RestTemplate().getForEntity(
-//                "http://localhost:8000/hello/count", CounterDto.class);
 
         CounterDto counterDto = helloCounterServiceProxy.getHelloCount(); //new CounterDto(CounterType.HELLO, counter);
 

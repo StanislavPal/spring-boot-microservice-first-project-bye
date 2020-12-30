@@ -5,7 +5,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient(name = "my-hello-service", url= "localhost:8000")
+@FeignClient( name="my-hello-service")
 @RibbonClient(name="my-hello-service")
 public interface HelloCounterServiceProxy {
     @GetMapping("/hello/count")

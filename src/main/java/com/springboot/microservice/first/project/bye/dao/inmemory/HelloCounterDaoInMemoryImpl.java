@@ -1,5 +1,6 @@
-package com.springboot.microservice.first.project.bye.dao;
+package com.springboot.microservice.first.project.bye.dao.inmemory;
 
+import com.springboot.microservice.first.project.bye.dao.HelloCounterDao;
 import org.springframework.stereotype.Repository;
 
 @Repository
