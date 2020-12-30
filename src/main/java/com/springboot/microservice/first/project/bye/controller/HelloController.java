@@ -21,7 +21,7 @@ public class HelloController {
     @Autowired
     private HelloCounterServiceProxy helloCounterServiceProxy;
 
-    @RequestMapping("/count")
+    @RequestMapping()
     public ResponseEntity<CounterDto> getHelloCount() {
 
 //        long counter = helloCounterService.getCounter();
@@ -37,7 +37,7 @@ public class HelloController {
         return new ResponseEntity<>(counterDto, HttpStatus.OK);
     }
 
-    @RequestMapping("feign/count")
+    @RequestMapping("feign")
     public ResponseEntity<CounterDto> getHelloCountFeign() {
 
 //        long counter = helloCounterService.getCounter();
